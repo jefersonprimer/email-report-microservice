@@ -1,22 +1,22 @@
-# Micro-serviço com Spring + Oracle Cloud
-O objetivo deste projeto foi exemplificar como realizar a criação de um microserviço completo usando Spring Boot, integrando com serviços do modo gratuito da Oracle Cloud para armazenamento de objetos, arquivos e disparo de e-mails. A ideia é simular um microserviço capaz de gerar e enviar relatórios por e-mail, utilizando os serviços Object Storage e Mail Delivery.
+# Micro-service with Spring + Oracle Cloud
+The objective of this project was to exemplify how to create a complete microservice using Spring Boot, integrating with Oracle Cloud's free mode services for storing objects, files and sending emails. The idea is to simulate a microservice capable of generating and sending reports by email, using Object Storage and Mail Delivery services.
 
-## Modo Gratuito Oracle Cloud
+## Oracle Cloud Free Mode
 
-Se quiser criar uma conta gratuita na Oracle Cloud, acesse o link [Oracle Cloud Free Tier](https://social.ora.cl/60049HoAk) e siga as instruções. 
+If you want to create a free account on Oracle Cloud, access the link [Oracle Cloud Free Tier](https://social.ora.cl/60049HoAk) e siga as instruções. 
 
-A conta gratuita oferece serviços com uso ilimitado como Instâncias de Máquinas Virtuais, Object Storage, Email Delivery, Banco de Dados NoSQl e Banco de Dados SQL.
+The free account offers services with unlimited use such as Virtual Machine Instances, Object Storage, Email Delivery, NoSQl Database and SQL Database.
 
-## Pré-requisitos para execução
-* [Possuir conta na Oracle Cloud](https://social.ora.cl/60049HoAk)
-* Java Versão 21
+## Prerequisites for execution
+* [Have an Oracle Cloud account](https://social.ora.cl/60049HoAk)
+* Java Version 21
 * Maven 3.9.7
 
-## Configuração
+## Settings
 
 ### Application.properties
 
-O arquivo de configuração `application.properties` deve ser configurado com as informações da sua conta Oracle Cloud. Para isso, você deve preencher o arquivo `application.properties` na pasta `src/main/resources` com as seguinte informações:
+The configuration file`application.properties` must be configured with your Oracle Cloud account information. To do this, you must fill in the file `application.properties` in the folder `src/main/resources` with the following information:
 
 ```properties
 # Oracle Cloud  
@@ -33,16 +33,16 @@ spring.mail.port=587
 spring.mail.protocol=smtp
 ```
 
-### Configuração Credenciais SDK
+### SDK Credentials Configuration
 
-No arquivo `.oci/config` você deve configurar as credenciais de acesso á Oracle Cloud. Para isso, você deve preencher o arquivo `.oci/config` na pasta raiz do projeto com as configs geradas na sua conta. 
+In the archive `.oci/config` you must configure Oracle Cloud access credentials. To do this, you must fill in the file`.oci/config` in the project root folder with the configs generated in your account.
 
-**Passo a passo**
+**Step by step**
 
-1.	Acesse a sua conta Oracle Cloud.
-2. Vá para a página de detalhes do seu perfil no console OCI. Vá para a aba “Chaves de API”. Clique no botão “Adicionar chave de API”. Isso abrirá a seguinte janela pop-up.
-3.	Insira um nome para a chave de API e clique no botão “Adicionar”. Isso fará o download do arquivo da chave de API.
-4.	Copie o conteúdo do arquivo e cole-o no arquivo ~/.oci/config em sua máquina local.
+1. Log in to your Oracle Cloud account.
+2. Go to your profile details page in the OCI console. Go to the “API Keys” tab. Click on the “Add API Key” button. This will open the following pop-up window.
+3. Enter a name for the API key and click the “Add” button. This will download the API key file.
+4. Copy the contents of the file and paste it into the ~/.oci/config file on your local machine.
 
 ```properties
 [DEFAULT]
